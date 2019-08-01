@@ -5,35 +5,62 @@ front-end clients.
 
 ## Dev Build
 
+1. Install the required dependencies:
+
 ```bash
-$ yarn
-$ yarn dev
+yarn
+```
+
+2. Start the 4 REST services in 4 different shells:
+
+```bash
+yarn start-db-accounts
+yarn start-db-orders
+yarn start-db-securities
+yarn start-db-trades
+```
+
+3. Start the GraphQL gateway:
+
+```bash
+yarn dev
 ```
 
 Now point your browser to http://localhost:4000/. You will see GraphQL
 Playground, an interactive development environment to test the GraphQL API.
 
-## Scaling Subscriptions Using Redis
+Try the following query:
 
-By default, we use the standard `PubSub` implementation from
-[graphql-subscriptions](https://github.com/apollographql/graphql-subscriptions).
-This implementation does not scale well as described in the docs:
+```
+query GetOrderById($id: ID!) {
+  order(id: $id) {
+    id
+    side
+    security {
+      cusip
+      issuer
+    }
+    qty
+    qtyFilled
+    price
+    settlementDate
+    status
+    trades {
+      id
+      qty
+      price
+    }
+  }
+}
 
-> Note that the default PubSub implementation is intended for demo purposes. It
-> only works if you have a single instance of your server and doesn't scale
-> beyond a couple of connections. For production usage you'll want to use one of
-> the PubSub implementations backed by an external store. (e.g. Redis)
+```
 
-We can use
-[graphql-redis-subscriptions](https://github.com/davidyaha/graphql-redis-subscriptions)
-for a more scalable implementation of `PubSub`. To do this, follow the steps
-below:
+Make sure to provide a value for the `id` query variable. The following should work:
 
-1. Install and start a Redis server. Here's
-   [an article](https://1upnote.me/post/2018/06/install-config-redis-on-mac-homebrew/)
-   that describes how to install Redis on MacOS.
-2. Open `src/graphql/pubsub.ts`. Comment out the default pubsub implementation
-   (lines 2-3). Uncomment the Redis implementation (lines 7-8).
-3. Restart the server.
+```
+{ "id": "8822d4f0-1cab-4a5e-8b4e-a03e89bc03f9" }
+```
 
-Now Subscriptions will use the Redis server for publish/subscribe.
+Here's the resulting screen:
+
+![GetOrderById Query](../assets/get-trade-by-id-query.png)

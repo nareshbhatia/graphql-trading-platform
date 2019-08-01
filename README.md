@@ -13,4 +13,4 @@ Here's the high-level architecture of our implementation:
 
 ![Trading Platform Architecture](assets/trading-platform-architecture.png)
 
-As you can see, we have implemented a GraphQL gateway backed by 4 independent REST services.
+As you can see, we have implemented a GraphQL gateway backed by 4 independent REST services. You can find installation instructions for the back-end (GraphQL gateway + the REST services) in the `graphql-trading-gateway` folder.
