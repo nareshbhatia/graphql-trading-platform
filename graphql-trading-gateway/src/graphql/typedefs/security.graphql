@@ -1,0 +1,79 @@
+"""
+A security that can be traded. This schema is customized for fixed-income
+securities such as bonds.
+"""
+type Security {
+    """
+    Unique identifier of the bond
+    Example: 718172CJ6
+    """
+    cusip: ID!
+
+    """
+    Organization that issued the bond
+    Example: Philip Morris International Inc.
+    """
+    issuer: String!
+
+    """
+    Bond Type
+    Example: Corporate
+    """
+    type: BondType
+
+    """
+    The rate of interest the issuer will pay on the face value of the bond,
+    expressed as a percentage. For example, a 3.375% coupon rate means that
+    the bond holder will receive 3.375% x $100 face value = $3.375 every year.
+    Example: 3.375
+    """
+    cuponRate: Float!
+
+    """
+    Frequency at which payments can be made. Standard is semiannual payments.
+    Example: Semiannually
+    """
+    frequency: String!
+
+    """
+    Date issued in ISO 8601 format
+    Example: 2019-05-01
+    """
+    issueDate: String!
+
+    """
+    Date on which the bond will mature and the issuer will pay back the
+    face value of the bond.
+    Example: 2029-08-15
+    """
+    maturityDate: String!
+
+    """
+    Amount the bond will be worth at maturity. It is also the reference amount
+    the bond issuer uses when calculating interest payments.
+    Example: 100
+    """
+    faceValue: Int!
+}
+
+"""
+Bond Types
+"""
+enum BondType {
+    Corporate
+    Municipal
+    Government
+    Agency
+}
+
+type Query {
+    """
+    Returns the security for the specified CUSIP
+    """
+    security(cusip: ID!): Security
+
+    """
+    Returns security of the specified type
+    """
+    securitiesByType(type: BondType!): [Security]!
+}

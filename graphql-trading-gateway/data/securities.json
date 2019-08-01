@@ -1,0 +1,34 @@
+{
+  "securities": [
+    {
+      "id": "718172CJ6",
+      "issuer": "Philip Morris International Inc.",
+      "type": "Corporate",
+      "cuponRate": 3.375,
+      "frequency": "Semiannually",
+      "issueDate": "2019-05-01",
+      "maturityDate": "2029-08-15",
+      "faceValue": 100
+    },
+    {
+      "id": "700000UBER",
+      "issuer": "Uber Technologies Inc.",
+      "type": "Corporate",
+      "cuponRate": 5.0,
+      "frequency": "Semiannually",
+      "issueDate": "2018-01-01",
+      "maturityDate": "2028-01-01",
+      "faceValue": 100
+    },
+    {
+      "id": "500000MA",
+      "issuer": "Commonwealth of Massachusetts",
+      "type": "Municipal",
+      "cuponRate": 3.0,
+      "frequency": "Semiannually",
+      "issueDate": "2018-01-01",
+      "maturityDate": "2028-01-01",
+      "faceValue": 100
+    }
+  ]
+}
