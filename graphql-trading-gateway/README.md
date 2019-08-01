@@ -55,7 +55,8 @@ query GetOrderById($id: ID!) {
 
 ```
 
-Make sure to provide a value for the `id` query variable. The following should work:
+Make sure to provide a value for the `id` query variable. The following should
+work:
 
 ```
 { "id": "8822d4f0-1cab-4a5e-8b4e-a03e89bc03f9" }
@@ -64,3 +65,26 @@ Make sure to provide a value for the `id` query variable. The following should w
 Here's the resulting screen:
 
 ![GetOrderById Query](../assets/get-trade-by-id-query.png)
+
+## Prod Build
+
+```bash
+yarn
+yarn build
+yarn start
+```
+
+Note: This is currently failing at runtime with the following error:
+
+```
+/Users/narbhati/projects/graphql-bookstore/apollo-bookstore-server/node_modules/graphql/validation/validate.js:80
+    throw new Error(errors.map(function (error) {
+    ^
+
+Error: Unknown type "Query".
+```
+
+See related issues:
+
+-   https://github.com/apollographql/apollo-server/issues/2332
+-   https://github.com/Urigo/merge-graphql-schemas/issues/155
