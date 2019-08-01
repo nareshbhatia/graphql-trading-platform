@@ -9,5 +9,8 @@ Here's the domain model of our trading domain:
 
 ![Domain Model](assets/trading-platform-domain-model.png)
 
-Our GraphQL gateway implementation uses the Apollo GraphQL Server:
-1. [GrapQL Trading Gateway](./graphql-trading-gateway)
+Here's the high-level architecture of our implementation:
+
+![Trading Platform Architecture](assets/trading-platform-architecture.png)
+
+As you can see, we have implemented a GraphQL gateway backed by 4 independent REST services.
