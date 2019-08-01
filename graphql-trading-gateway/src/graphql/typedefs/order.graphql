@@ -1,0 +1,84 @@
+type Order {
+    """
+    Unique identifier of the order
+    Example: 8822d4f0-1cab-4a5e-8b4e-a03e89bc03f9
+    """
+    id: ID!
+
+    """
+    Order side - Buy or Sell
+    Example: Buy
+    """
+    side: Side!
+
+    """
+    Security
+    """
+    security: Security!
+
+    """
+    Quantity
+    Example: 375
+    """
+    qty: Int!
+
+    """
+    Quantity filled
+    Example: 100
+    """
+    qtyFilled: Int!
+
+    """
+    For a buy order this is the bid price.
+    For a sell order this is the ask price.
+    Example: 103.346
+    """
+    price: Float!
+
+    """
+    Date on which the trade should be settled
+    Example: 2019-08-02
+    """
+    settlementDate: String!
+
+    """
+    Order Status
+    Example: New
+    """
+    status: OrderStatus!
+
+    """
+    Trades associated with the filled quanity
+    """
+    trades: [Trade]!
+}
+
+"""
+Side
+"""
+enum Side {
+    Buy
+    Sell
+}
+
+"""
+Order Status
+"""
+enum OrderStatus {
+    New
+    PartiallyFilled
+    Filled
+    Expired
+}
+
+type Query {
+    """
+    Returns the order with the specified id
+    """
+    order(id: ID!): Order
+
+    """
+    Returns orders for the specified cusip
+    """
+    ordersByCusip(cusip: ID!): [Order]!
+}

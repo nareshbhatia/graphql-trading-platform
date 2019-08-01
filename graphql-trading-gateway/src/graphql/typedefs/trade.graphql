@@ -1,0 +1,48 @@
+type Trade {
+    """
+    Unique identifier of the trade
+    Example: a2d96848-be9b-4b49-93c2-0f3603e70d00
+    """
+    id: ID!
+
+    """
+    Trade side - Buy or Sell
+    Example: Buy
+    """
+    side: Side!
+
+    """
+    Security
+    """
+    security: Security!
+
+    """
+    Quantity
+    Example: 100
+    """
+    qty: Int!
+
+    """
+    Price paid or received
+    Example: 103.346
+    """
+    price: Float!
+
+    """
+    Date on which the trade was settled
+    Example: 2019-08-02
+    """
+    settlementDate: String!
+
+    """
+    Order associated with this trade
+    """
+    order: Order!
+}
+
+type Query {
+    """
+    Returns the trade with the specified id
+    """
+    trade(id: ID!): Trade
+}

@@ -1,0 +1,22 @@
+{
+  "trades": [
+    {
+      "id": "a2d96848-be9b-4b49-93c2-0f3603e70d00",
+      "side": "Buy",
+      "cusip": "718172CJ6",
+      "qty": 100,
+      "price": 103.342,
+      "settlementDate": "2019-08-02",
+      "orderId": "8822d4f0-1cab-4a5e-8b4e-a03e89bc03f9"
+    },
+    {
+      "id": "d4816411-39be-4568-9c5c-1c67db68c6dc",
+      "side": "Sell",
+      "cusip": "718172CJ6",
+      "qty": 100,
+      "price": 103.342,
+      "settlementDate": "2019-08-02",
+      "orderId": "b3bd9305-e2c0-4afc-b7a0-080846d38088"
+    }
+  ]
+}

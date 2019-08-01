@@ -1,0 +1,24 @@
+{
+  "orders": [
+    {
+      "id": "8822d4f0-1cab-4a5e-8b4e-a03e89bc03f9",
+      "side": "Buy",
+      "cusip": "718172CJ6",
+      "qty": 375,
+      "qtyFilled": 100,
+      "price": 103.346,
+      "settlementDate": "2019-08-02",
+      "status": "PartiallyFilled"
+    },
+    {
+      "id": "b3bd9305-e2c0-4afc-b7a0-080846d38088",
+      "side": "Sell",
+      "cusip": "718172CJ6",
+      "qty": 100,
+      "qtyFilled": 100,
+      "price": 103.342,
+      "settlementDate": "2019-08-02",
+      "status": "Filled"
+    }
+  ]
+}

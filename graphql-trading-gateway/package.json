@@ -9,7 +9,10 @@
     "format": "prettier --write README.md 'src/**/*.ts*'",
     "start": "ts-node src/index.ts",
     "start:debug": "ndb ts-node src/index.ts",
-    "start-db-securities": "json-server --watch data/securities.json --port 9000"
+    "start-db-accounts": "json-server --watch data/accounts.json --port 9000",
+    "start-db-orders": "json-server --watch data/orders.json --port 9010",
+    "start-db-securities": "json-server --watch data/securities.json --port 9020",
+    "start-db-trades": "json-server --watch data/trades.json --port 9030"
   },
   "keywords": [],
   "author": "",
