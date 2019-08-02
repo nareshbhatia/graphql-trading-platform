@@ -73,18 +73,3 @@ yarn
 yarn build
 yarn start
 ```
-
-Note: This is currently failing at runtime with the following error:
-
-```
-/Users/narbhati/projects/graphql-bookstore/apollo-bookstore-server/node_modules/graphql/validation/validate.js:80
-    throw new Error(errors.map(function (error) {
-    ^
-
-Error: Unknown type "Query".
-```
-
-See related issues:
-
--   https://github.com/apollographql/apollo-server/issues/2332
--   https://github.com/Urigo/merge-graphql-schemas/issues/155
